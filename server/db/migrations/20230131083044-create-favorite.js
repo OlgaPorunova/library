@@ -8,24 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      userId: {
-        references: {
-          model: {
-            tableName: 'Users',
-          },
-          key: 'id',
-        },
-        type: Sequelize.INTEGER,
-      },
-      bookId: {
-        references: {
-          model: {
-            tableName: 'Books',
-          },
-          key: 'id',
-        },
-        type: Sequelize.INTEGER,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -39,6 +21,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Favorites');
+    await queryInterface.dropTable('Reviews');
   },
 };

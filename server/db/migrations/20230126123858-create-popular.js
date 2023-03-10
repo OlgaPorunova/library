@@ -8,36 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      title: {
-        type: Sequelize.STRING,
-      },
-      description: {
-        type: Sequelize.TEXT,
-      },
-      photo: {
-        type: Sequelize.STRING,
-      },
-      rating: {
-        type: Sequelize.INTEGER,
-      },
-      authorId: {
-        references: {
-          model: {
-            tableName: 'Authors',
-          },
-          key: 'id',
-        },
-        type: Sequelize.INTEGER,
-      },
-      genreId: {
-        references: {
-          model: {
-            tableName: 'Genres',
-          },
-          key: 'id',
-        },
-        type: Sequelize.INTEGER,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -51,6 +21,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Populars');
+    await queryInterface.dropTable('Reviews');
   },
 };

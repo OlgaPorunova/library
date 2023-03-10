@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from './reducers/userReducer';
-import popularSlice from './popularSlice';
 import publisherSlice from './publisherSlice';
 import bookSlice from './bookSlice';
 import infoReducer from './reducers/infoSlice';
@@ -12,12 +11,10 @@ import priceReducer from './reducers/priceSlice';
 import personalAreaReducer from './reducers/personalAreaSlice';
 import authorInfoReducer from './reducers/authorInfoSlice';
 import mailerReducer from './reducers/mailerReducer';
-import favoriteReducer from './reducers/favoriteSlice';
 
 const store = configureStore({
   reducer: {
     user: userReducer,
-    persons: popularSlice,
     publisher: publisherSlice,
     myBooks: bookSlice,
     info: infoReducer,
@@ -30,7 +27,6 @@ const store = configureStore({
     cabinet: personalAreaReducer,
     authorInfo: authorInfoReducer,
     mailer: mailerReducer,
-    favorite: favoriteReducer,
   },
 });
 

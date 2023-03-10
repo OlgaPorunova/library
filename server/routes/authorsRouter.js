@@ -1,5 +1,5 @@
 const express = require('express');
-const { Book, Author, Genre } = require('../db/models');
+const { Book, Author } = require('../db/models');
 
 const router = express.Router();
 

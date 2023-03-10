@@ -12,13 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.User, { foreignKey: 'userId' });
       this.belongsTo(models.Book, { foreignKey: 'bookId' });
-      this.belongsTo(models.Popular, { foreignKey: 'popularId' });
     }
   }
   Order.init({
     userId: DataTypes.INTEGER,
     bookId: DataTypes.INTEGER,
-    popularId: DataTypes.INTEGER,
     adress: DataTypes.STRING,
     date: DataTypes.DATE,
     time: DataTypes.TIME,

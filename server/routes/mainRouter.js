@@ -1,7 +1,7 @@
 const express = require('express');
 const { Op } = require('sequelize');
 const {
-  Popular, Author, Book, Genre, Sequelize,
+  Author, Book, Genre, Sequelize,
 } = require('../db/models');
 
 const router = express.Router();
@@ -40,22 +40,6 @@ router.post('/', async (req, res) => {
     },
   });
 
-  const foundPopular = await Popular.findAll({
-    where: {
-      [Op.or]: [
-        {
-          title: {
-            [Sequelize.Op.iLike]: `%${input}%`,
-          },
-        },
-        {
-          description: {
-            [Sequelize.Op.iLike]: `%${input}%`,
-          },
-        }],
-    },
-  });
-
   const foundGenre = await Genre.findAll({
     where: {
       genre: {
@@ -64,13 +48,8 @@ router.post('/', async (req, res) => {
     },
   });
 
-  const found = [...foundBook, ...foundAuthor, ...foundPopular, ...foundGenre];
+  const found = [...foundBook, ...foundAuthor, ...foundGenre];
   res.json(found);
-});
-
-router.get('/getpopular', async (req, res) => {
-  const popular = await Popular.findAll({ include: [Author] });
-  res.json(popular);
 });
 
 router.get('/getbooks', async (req, res) => {
@@ -83,9 +62,4 @@ router.get('/publisher', async (req, res) => {
   res.json(popular);
 });
 
-router.get('/onepopular/:id', async (req, res) => {
-  const { id } = req.params;
-  const popular = await Popular.findAll({ where: { id } });
-  res.json(popular);
-});
 module.exports = router;

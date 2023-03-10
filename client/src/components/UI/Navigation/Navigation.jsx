@@ -14,13 +14,7 @@ export default function Navigation() {
               <Link className="nav-link text-dark" to="/books">Книги</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-dark" to="/popular">Популярное</Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link text-dark" to="/publisher">Авторы</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-dark" to="/favorite">Избранное</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-dark" to="/cabinet">Личный кабинет</Link>
@@ -31,9 +25,6 @@ export default function Navigation() {
           <ul className="nav nav-tabs d-flex justify-content-around border-end border-secondary border-opacity-25" id="navStyle">
             <li className="nav-item">
               <Link className="nav-link text-dark" to="/books">Книги</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-dark" to="/popular">Популярное</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link text-dark" to="/publisher">Авторы</Link>

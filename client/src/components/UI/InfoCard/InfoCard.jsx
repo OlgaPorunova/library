@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { setAuthor } from '../../../redux/reducers/authorSlice';
-// import { booksesAction, setBookses } from '../../../redux/reducers/booksesSlice';
-import { favoriteAddAction } from '../../../redux/reducers/favoriteSlice';
 import { infoAction, setInfo } from '../../../redux/reducers/infoSlice';
 import { addOrder, nullOrder } from '../../../redux/reducers/orderSlice';
 import { nullMoney, plusOrder } from '../../../redux/reducers/priceSlice';
@@ -37,11 +35,6 @@ export default function InfoCard() {
     dispatch(plusOrder(info.price));
     dispatch(addOrder(info));
     navigate('/order');
-  }
-
-  function openFavorite() {
-    dispatch(favoriteAddAction(id));
-    // navigate('/favorite');
   }
 
   console.log(info);
@@ -89,7 +82,6 @@ export default function InfoCard() {
                   rowGap: '20px',
                 }}
               >
-                <button onClick={() => openFavorite()} type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">В избранное</button>
                 <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-warning">Вернуться назад</button>
                 <button onClick={() => openAuthor()} type="button" className="btn btn-outline-warning">Подробнее об авторе</button>
                 <button onClick={() => openOrder()} type="button" className="btn btn-outline-warning">Арендовать</button>
@@ -105,9 +97,6 @@ export default function InfoCard() {
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabel fontsForText">Library</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-            </div>
-            <div className="modal-body text-center fontsForText">
-              Вы добавили книгу в избранное!
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

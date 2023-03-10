@@ -5,7 +5,6 @@ import {
   Card, CardBody, CardText, CardTitle,
 } from 'reactstrap';
 import { setAuthor } from '../../redux/reducers/authorSlice';
-import { favoriteAddAction } from '../../redux/reducers/favoriteSlice';
 import { infoAction, setInfo } from '../../redux/reducers/infoSlice';
 import { addOrder, nullOrder } from '../../redux/reducers/orderSlice';
 import { nullMoney, plusOrder } from '../../redux/reducers/priceSlice';
@@ -37,11 +36,6 @@ export default function MyList() {
     navigate('/order');
   }
 
-  function openFavorite(book) {
-    dispatch(favoriteAddAction(book.id));
-    // navigate('/favorite');
-  }
-
   return (
     <div className="row" style={{ display: 'flex', justifyContent: 'center' }}>
       {books.map((book) => (
@@ -68,7 +62,6 @@ export default function MyList() {
                   {book.description}
                 </CardText>
               </CardBody>
-              <button onClick={() => openFavorite(book)} type="button" className="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">В избранное</button>
               <button onClick={() => openAuthor(book)} type="button" className="btn btn-outline-warning mt-1">Подробнее об авторе</button>
               <button onClick={() => openOrder(book)} type="button" className="btn btn-outline-warning mt-1 mb-2">Арендовать</button>
             </Card>
@@ -97,9 +90,6 @@ export default function MyList() {
                     <div className="modal-header">
                       <h1 className="modal-title fs-5" id="exampleModalLabel fontsForText">Library</h1>
                       <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-                    </div>
-                    <div className="modal-body text-center fontsForText">
-                      Вы добавили книгу в избранное!
                     </div>
                     <div className="modal-footer">
                       <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -32,15 +32,6 @@ module.exports = {
         },
         type: Sequelize.INTEGER,
       },
-      popularId: {
-        references: {
-          model: {
-            tableName: 'Populars',
-          },
-          key: 'id',
-        },
-        type: Sequelize.INTEGER,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

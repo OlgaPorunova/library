@@ -6,7 +6,6 @@ import { checkAuth } from './redux/actions/userAction';
 import AuthPage from './components/Pages/AuthPage';
 import LoginPage from './components/Pages/LoginPage';
 import Genres from './components/Pages/Genres/Genres';
-import Popular from './components/Pages/Popular/Popular';
 import Author from './components/Pages/Author/Author';
 import Basket from './components/Pages/Basket/Basket';
 import ClientsPage from './components/Pages/ClientsPage/ClientsPage';
@@ -15,14 +14,11 @@ import Books from './components/Pages/Books/Books';
 import InfoCard from './components/UI/InfoCard/InfoCard';
 import AuthorCard from './components/UI/AuthorCard/AuthorCard';
 import Order from './components/Pages/Order/Order';
-import Comics from './components/Pages/Comics/Comics';
-import OnePopularBook from './components/Pages/Mainpage/UI/OnePopularBook/OnePopularBook';
 import Entry from './components/Pages/Entry';
 import PersonalArea from './components/Pages/PersonalArea/PersonalArea';
 import MyPaiment from './components/Pages/MyPaiment/MyPaiment';
 import AuthorInfo from './components/UI/AuthorInfo/AuthorInfo';
 import Pay from './components/UI/Pay';
-import Favorite from './components/Pages/Favorite/Favorite';
 import MyScroll from './components/Pages/Mainpage/UI/MyScroll/MyScroll';
 import Mainpage from './components/Pages/Mainpage/Mainpage';
 import Loader from './components/Loader/Loader';
@@ -41,14 +37,11 @@ function App() {
         <Route path="/main" element={<Mainpage />} />
         <Route path="/scroll" element={<MyScroll />} />
         <Route path="/paiment" element={<MyPaiment />} />
-        <Route path="/onepopular/:id" element={<OnePopularBook />} />
         <Route path="/genre" element={<Genres />} />
-        <Route path="/popular" element={<Popular />} />
         <Route path="/publisher" element={<Author />} />
         <Route path="/basket" element={<Basket />} />
         <Route path="/client" element={<ClientsPage />} />
         <Route path="/mybook" element={<Mybook />} />
-        <Route path="/comics" element={<Comics />} />
         <Route path="/signup" element={<AuthPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/entry" element={<Entry />} />
@@ -59,7 +52,6 @@ function App() {
         <Route path="/cabinet" element={<PersonalArea />} />
         <Route path="/publisher/:id" element={<AuthorInfo />} />
         <Route path="/pay" element={<Pay />} />
-        <Route path="/favorite" element={<Favorite />} />
         <Route path="/loader" element={<Loader />} />
         <Route path="*" element={<PageNotFounded />} />
       </Routes>

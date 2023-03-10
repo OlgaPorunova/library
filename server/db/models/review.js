@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.User, { foreignKey: 'userId' });
       this.belongsTo(models.Book, { foreignKey: 'bookId' });
-      this.belongsTo(models.Popular, { foreignKey: 'popularId' });
     }
   }
   Review.init({
@@ -20,7 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     rating: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
     bookId: DataTypes.INTEGER,
-    popularId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Review',
